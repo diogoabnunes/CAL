@@ -1,0 +1,24 @@
+Dados de entrada:
+	- m: troco a devolver;
+	- V = {v1, v2, ..., vn} |V| = n;
+	- i: 
+	- k: 0 <= k <= m; montante parcial;
+
+Variáveis de Decisão:
+	- X = {x1, x2, .., xn} |X| = n;
+
+Função-Objetivo:
+	- min(Σ(i=1,n) xi)
+
+Restrições:
+	- Σ(i=1,n) xi*vi = m
+
+minCoins(i,k)
+	0, se k = 0;
+	minCoins(i,k-Vi) + 1, se minCoins(i,k-Vi) + 1 < minCoins(i-1,k) e k >= Vi;
+	minCoins(i-1,k), caso contrário;
+
+lastCoin(i,k)
+	0, se k = 0;
+	Vi, se minCoins(i,k-Vi) + 1 < minCoins(i-1,k) e k >= Vi;
+	lastCoin(i-1,k), caso contrário;
