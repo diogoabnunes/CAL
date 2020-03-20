@@ -295,7 +295,6 @@ TEST(CAL_FP02, testLabirinth) {
     Labirinth l1(lab1);
     EXPECT_EQ(l1.findGoal(1, 1),true);
 
-
     Labirinth l2(lab2);
     EXPECT_EQ(l2.findGoal(1, 1),false);
 }

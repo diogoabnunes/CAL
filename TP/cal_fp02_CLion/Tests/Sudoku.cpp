@@ -56,7 +56,6 @@ void Sudoku::initialize()
 			}
 		}
 	}
-
 	this->countFilled = 0;
 }
 
@@ -94,7 +93,35 @@ bool Sudoku::isComplete()
  */
 bool Sudoku::solve()
 {
-	return false;
+    for (int y = 0; y < 9; y++) {
+        for (int x = 0; x < 9; x++) {
+
+            if (numbers[y][x] == 0) { // por preencher
+
+                for (int k = 1; k < 10; k++) {
+                    if (lineHasNumber[y][k] || columnHasNumber[x][k] || block3x3HasNumber[y/3][x/3][k])
+                        continue; // já existe este número na linha, coluna ou bloco, por isso este não serve
+
+                    numbers[y][x] = k;
+                    lineHasNumber[y][k] = true;
+                    columnHasNumber[x][k] = true;
+                    block3x3HasNumber[y/3][x/3][k] = true;
+                    countFilled++;
+
+                    if (solve()) break; // continuar um processo e ver se é possível completar o sudoku
+
+                    numbers[y][x] = 0;
+                    lineHasNumber[y][k] = false;
+                    columnHasNumber[x][k] = false;
+                    block3x3HasNumber[y/3][x/3][k] = false;
+                    countFilled--;
+                }
+                if (numbers[y][x] == 0)
+                    return false; // impossível
+            }
+        }
+    }
+    return isComplete();
 }
 
 
