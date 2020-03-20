@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/CAL_FP03.dir/main.cpp.o CMakeFiles/CAL_FP03.dir/Tests/tests.cpp.o CMakeFiles/CAL_FP03.dir/Tests/NearestPoints.cpp.o CMakeFiles/CAL_FP03.dir/Tests/Point.cpp.o  -o CAL_FP03 lib/libgtestd.a lib/libgtest_maind.a lib/libgtestd.a -lpthread 

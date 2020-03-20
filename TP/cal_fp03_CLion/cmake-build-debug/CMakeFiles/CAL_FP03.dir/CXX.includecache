@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/diogo/Documentos/2 Ano/CAL/TP/cal_fp03_CLion/Tests/NearestPoints.cpp
+limits
+-
+thread
+-
+algorithm
+-
+cmath
+-
+NearestPoints.h
+/home/diogo/Documentos/2 Ano/CAL/TP/cal_fp03_CLion/Tests/NearestPoints.h
+Point.h
+/home/diogo/Documentos/2 Ano/CAL/TP/cal_fp03_CLion/Tests/Point.h
+
+/home/diogo/Documentos/2 Ano/CAL/TP/cal_fp03_CLion/Tests/NearestPoints.h
+Point.h
+/home/diogo/Documentos/2 Ano/CAL/TP/cal_fp03_CLion/Tests/Point.h
+
+/home/diogo/Documentos/2 Ano/CAL/TP/cal_fp03_CLion/Tests/Point.h
+iostream
+-
+vector
+-
+

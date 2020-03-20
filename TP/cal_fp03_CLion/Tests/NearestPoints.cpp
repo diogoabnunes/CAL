@@ -43,7 +43,20 @@ static void sortByY(vector<Point> &v, int left, int right)
  */
 Result nearestPoints_BF(vector<Point> &vp) {
 	Result res;
-	// TODO
+
+	for (auto &p1 : vp) {
+	    for (auto &p2 : vp) {
+	        if (!(p1 == p2)) {
+	            double dist = p1.distance(p2);
+	            if (res.dmin > dist) {
+	                res.p1 = p1;
+	                res.p2 = p2;
+	                res.dmin = dist;
+	            }
+	        }
+	    }
+	}
+
 	return res;
 }
 

@@ -10,7 +10,8 @@
 #include <cmath>
 
 Point::Point() {
-	// TODO Auto-generated constructor stub
+	this->x = 0;
+	this->y = 0;
 }
 
 Point::~Point() {

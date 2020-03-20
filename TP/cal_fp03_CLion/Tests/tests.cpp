@@ -177,6 +177,7 @@ void testNearestPoints(NP_FUNC func, string alg) {
         return;
     if (testNPFile("Pontos128k", 0.0, func, alg) > maxTime)
         return;
+    /*
     if (testNPRand(0x40000, "Pontos256k", 1.0, func, alg) > maxTime)
         return;
     if (testNPRand(0x80000, "Pontos512k",  1.0, func, alg) > maxTime)
@@ -198,7 +199,7 @@ void testNearestPoints(NP_FUNC func, string alg) {
     if ( testNPRandConstX(0x100000, "Pontos1MConstX",  1.0, func, alg) > maxTime)
         return;
     if ( testNPRandConstX(0x200000, "Pontos2MConstX",  1.0, func, alg) > maxTime)
-        return;
+        return;*/
 }
 
 
@@ -208,30 +209,30 @@ TEST(CAL_FP03, testNP_BF) {
 
 
 TEST(CAL_FP03, testNP_BF_SortedX) {
-    testNearestPoints(nearestPoints_BF_SortByX, "Brute force, sorted by x");
+    //testNearestPoints(nearestPoints_BF_SortByX, "Brute force, sorted by x");
 }
 
 
 TEST(CAL_FP03, testNP_DC) {
-    testNearestPoints(nearestPoints_DC, "Divide and conquer");
+    //testNearestPoints(nearestPoints_DC, "Divide and conquer");
 }
 
 
 TEST(CAL_FP03, testNP_DC_2Threads) {
-    setNumThreads(2);
-    testNearestPoints(nearestPoints_DC_MT, "Divide and conquer with 2 threads");
+    //setNumThreads(2);
+    //testNearestPoints(nearestPoints_DC_MT, "Divide and conquer with 2 threads");
 }
 
 
 TEST(CAL_FP03, testNP_DC_4Threads) {
-    setNumThreads(4);
-    testNearestPoints(nearestPoints_DC_MT, "Divide and conquer with 4 threads");
+    //setNumThreads(4);
+    //testNearestPoints(nearestPoints_DC_MT, "Divide and conquer with 4 threads");
 }
 
 
 TEST(CAL_FP03, testNP_DC_8Threads) {
-    setNumThreads(8);
-    testNearestPoints(nearestPoints_DC_MT, "Divide and conquer with 8 threads");
+    //setNumThreads(8);
+    //testNearestPoints(nearestPoints_DC_MT, "Divide and conquer with 8 threads");
 }
 
 
