@@ -319,6 +319,7 @@ vector<T> Graph<T>::topsort() const {
 template <class T>
 int Graph<T>::maxNewChildren(const T & source, T &inf) const {
 	// TODO (28 lines, mostly reused)
+	
 	return 0;
 }
 
