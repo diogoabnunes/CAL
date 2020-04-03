@@ -1,0 +1,63 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/diogo/Documentos/CAL/TP/cal_fp05_CLion/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_83a81/fast && /usr/bin/make -f CMakeFiles/cmTC_83a81.dir/build.make CMakeFiles/cmTC_83a81.dir/build
+make[1]: Entering directory '/home/diogo/Documentos/CAL/TP/cal_fp05_CLion/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_83a81.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_83a81.dir/src.c.o   -c /home/diogo/Documentos/CAL/TP/cal_fp05_CLion/cmake-build-debug/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_83a81
+/home/diogo/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_83a81.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_83a81.dir/src.c.o  -o cmTC_83a81 
+CMakeFiles/cmTC_83a81.dir/src.c.o: na função `main':
+src.c:(.text+0x3e): referência indefinida a `pthread_create'
+src.c:(.text+0x4a): referência indefinida a `pthread_detach'
+src.c:(.text+0x5b): referência indefinida a `pthread_join'
+src.c:(.text+0x6f): referência indefinida a `pthread_atfork'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_83a81.dir/build.make:86: recipe for target 'cmTC_83a81' failed
+make[1]: *** [cmTC_83a81] Error 1
+make[1]: Leaving directory '/home/diogo/Documentos/CAL/TP/cal_fp05_CLion/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_83a81/fast' failed
+make: *** [cmTC_83a81/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/diogo/Documentos/CAL/TP/cal_fp05_CLion/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_7d4ae/fast && /usr/bin/make -f CMakeFiles/cmTC_7d4ae.dir/build.make CMakeFiles/cmTC_7d4ae.dir/build
+make[1]: Entering directory '/home/diogo/Documentos/CAL/TP/cal_fp05_CLion/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7d4ae.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_7d4ae.dir/CheckFunctionExists.c.o   -c /home/diogo/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/bin/cmake/linux/share/cmake-3.15/Modules/CheckFunctionExists.c
+Linking C executable cmTC_7d4ae
+/home/diogo/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7d4ae.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_7d4ae.dir/CheckFunctionExists.c.o  -o cmTC_7d4ae -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_7d4ae.dir/build.make:86: recipe for target 'cmTC_7d4ae' failed
+make[1]: *** [cmTC_7d4ae] Error 1
+make[1]: Leaving directory '/home/diogo/Documentos/CAL/TP/cal_fp05_CLion/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_7d4ae/fast' failed
+make: *** [cmTC_7d4ae/fast] Error 2
+
+
+
