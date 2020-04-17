@@ -1,9 +1,11 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/FichaJUNG.dir/FichaJUNG.cpp.o"
-  "CMakeFiles/FichaJUNG.dir/lib/connection.cpp.o"
-  "CMakeFiles/FichaJUNG.dir/lib/graphviewer.cpp.o"
-  "FichaJUNG"
+  "CMakeFiles/FichaJUNG.dir/FichaJUNG.cpp.obj"
+  "CMakeFiles/FichaJUNG.dir/lib/connection.cpp.obj"
+  "CMakeFiles/FichaJUNG.dir/lib/graphviewer.cpp.obj"
+  "FichaJUNG.exe"
+  "FichaJUNG.exe.manifest"
   "FichaJUNG.pdb"
+  "libFichaJUNG.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.
