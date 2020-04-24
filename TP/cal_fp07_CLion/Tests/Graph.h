@@ -375,25 +375,24 @@ template <class T>
 vector<Vertex<T>* > Graph<T>::calculatePrim() {
 
     auto s = initSingleSource(vertexSet.at(0)->getInfo());
-    MutablePriorityQueue<Vertex<T>> Q;
-    Q.insert(s);
+    MutablePriorityQueue<Vertex<T>> q;
+    q.insert(s);
 
-    while (!Q.empty()) {
-        auto v = Q.extractMin();
+    while (!q.empty()) {
+        auto v = q.extractMin();
 
         for (auto w : v->adj) {
-            auto old_distance = w.dest->dist;
+            auto oldDist = w.dest->dist;
             if (relax(v, w.dest, w.weight)) {
-                if (old_distance == INF) {
-                    Q.insert(w.dest);
+                if (oldDist == INF) {
+                    q.insert(w.dest);
                 }
                 else {
-                    Q.decreaseKey(w.dest);
+                    q.decreaseKey(w.dest);
                 }
             }
         }
     }
-
 	return vertexSet;
 }
 
@@ -404,7 +403,7 @@ vector<Vertex<T>*> Graph<T>::calculateKruskal() {
 
     auto s = initSingleSource(vertexSet.at(0)->getInfo());
 
-    
+
 
     return vertexSet;
 }
